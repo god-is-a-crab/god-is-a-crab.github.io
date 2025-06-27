@@ -28,7 +28,7 @@ twitter_username: ""
 github_username:  god-is-a-crab
 
 # Build settings
-theme: jekyll-theme-midnight
+theme: minima
 plugins:
   - jekyll-feed
 
