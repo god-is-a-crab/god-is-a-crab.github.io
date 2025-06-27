@@ -4,10 +4,12 @@ title:  "Welcome!"
 date:   2025-06-28 09:11:47 +1000
 categories: Welcome
 ---
-I use this site as a personal journal to document:
+I use this site as a personal journal to document topics like:
 - Bare-metal Internals
-- Microcontrollers
+- Microcontrollers, MCU Peripherals
+- Communications Protocols
 - Sensors
 - Radio
 - PCB Design
+- Miscellaneous ICs (Integrated Circuits)
 - Electronics Debugging
