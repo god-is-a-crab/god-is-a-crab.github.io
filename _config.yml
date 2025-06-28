@@ -20,8 +20,7 @@
 
 title: Interesting Electronics
 email: ""
-description: >- # this means to ignore newlines until "baseurl:"
-  Read interesting stuff about electronics
+description: Jingwei Ni
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "https://god-is-a-crab.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: ""
