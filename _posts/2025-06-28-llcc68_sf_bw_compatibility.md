@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  Semtech LLCC68 SF-BW (Spreading Factor - Bandwidth) Compatibility
+title:  Semtech LLCC68 Spreading Factor/Bandwidth Compatibility
 date:   2025-06-28 13:15:47 +1000
 categories: LoRa
 ---
 
-The Semtech LLCC68 does not support all spreading factors with all bandwidths. Source: see the note under Table 6-1 of the LLCC68 datasheet.
+The Semtech LLCC68 does not support all spreading factors with all bandwidths. Source: see the note under Table 6-1 of the [LLCC68 datasheet](https://semtech.my.salesforce.com/sfc/p/#E0000000JelG/a/RQ000008nK7R/FiVQKlnTNvoBn7467ksX2ZwrkgAyfFzrXmdzQt3QcUw).
 
 > 1. Not all SF are available for any bandwidth with the LLCC68
 
