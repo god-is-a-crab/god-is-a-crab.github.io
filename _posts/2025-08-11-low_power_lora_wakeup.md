@@ -9,7 +9,7 @@ categories: LoRa
 
 A battery-powered device with a low duty-cycle typically uses the _event loop_ design pattern - the device sleeps until it is required to perform an action. This pattern optimizes power usage because such a device should spend most of its time in a low-power sleep state and a small amount of time awake. The device is woken up by an event, usually some sort of hardware interrupt. This post expores the scenario where the event to wake up from is a signal from an external LoRa node (which I will call the gateway).
 
-![Event loop diagram](/assets/images/event_loop.png)
+![Event loop diagram](/assets/images/lora_wakeup/event_loop.png)
 
 ## Assumptions & Requirements
 Before discussing the two devised protocols, I will define some assumptions and requirements that went into creating these protocols.
@@ -35,7 +35,7 @@ This gives us the approximate values:
 ## Protocol 1 - TX Beacon
 With this approach, the device acts as a beacon, periodically transmitting a packet - the gateway listens in RX mode for the beacon and responds with an _ACK_ when it receives the beacon. Reception of this _ACK_ is the wakeup event for the device. 
 
-![TX beacon diagram](/assets/images/tx_beacon.png)
+![TX beacon diagram](/assets/images/lora_wakeup/tx_beacon.png)
 
 #### Characteristics
 - Power consumption: High because transmitting is energy expensive
@@ -63,7 +63,7 @@ Days of operation = 113 days
 ## Protocol 2 - CAD Windows
 This protocol makes use of the Channel Activity Detection (CAD) feature in Semtech LoRa transceivers - the device periodically enters CAD mode, allowing the gateway a small window to wake the device by transmitting. The gateway should loop between TX and CAD to try wake the device while also listening for a response from the device. There is a chance that the CAD window by the device doesn't detect the gateway's transmit because of the interval between transmits, this is why the device should do a second CAD if the first one doesn't detect anything. The completion of this handshake is the wakeup event.
 
-![CAD windows diagram](/assets/images/cad_windows.png)
+![CAD windows diagram](/assets/images/lora_wakeup/cad_windows.png)
 
 #### Characteristics
 - Power consumption: Low - CAD is very cheap (~25x less current and 1/5 the duration for 4 symbol CAD)
